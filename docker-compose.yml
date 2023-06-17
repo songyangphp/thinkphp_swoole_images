@@ -1,0 +1,15 @@
+version: '2'
+services:
+    order_api:
+        # image: eborges/phpnginx7.2
+        build: .
+        # image: vango/easyswoole
+        container_name: order_api
+        volumes:
+            - ./order_api/:/data/www/
+            - ./conf/conf.d/:/usr/local/tengine/conf/conf.d/
+            - ./conf/nginx.conf:/usr/local/tengine/conf/nginx.conf
+        ports:
+            - "85:80"
+            - "443:443"
+            - "9503:9501"
