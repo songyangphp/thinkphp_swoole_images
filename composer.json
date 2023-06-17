@@ -1,5 +1,0 @@
-{
-    "require": {
-        "topthink/think-swoole": "^3.1"
-    }
-}

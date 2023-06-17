@@ -81,3 +81,7 @@ RUN rm -rf /etc/opt/remi/php73/php.d/50-apc.ini
 ADD ./conf/start.sh /start.sh
 RUN chmod 755 /start.sh
 ENTRYPOINT  ["/start.sh"]
+
+## 安装composer拓展
+#RUN cd /data/www/
+#RUN composer install
