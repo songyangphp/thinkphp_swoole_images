@@ -36,8 +36,14 @@
 * 在config/swoole.php配置端口及热更新等配置
 
 ## 阿里云云效及流水线相关配置
-* 待更新
+* 核心目标是为了更容易的发布部署到serverless或其他K8s服务
 
 
-#### by：火车王 songyangphp@github.com 2023-6-17
+## 目前存在的问题
+* 构建镜像时，DOCKERFILE中不可执行composer install命令，这样就导致了无法忽略vendor目录(已解决)
+
+***
+
+#### by：火车王 songyangphp@github.com
 #### 本人水平有限 不足之处还请大佬指教
+#### 2023-6-19日更新
