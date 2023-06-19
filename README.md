@@ -40,7 +40,7 @@
 
 
 ## 目前存在的问题
-* 构建镜像时，DOCKERFILE中不可执行composer install命令，这样就导致了无法忽略vendor目录(已解决)
+* 构建镜像时，DOCKERFILE中不可执行composer install命令，这样就导致了无法忽略vendor目录
 
 ***
 

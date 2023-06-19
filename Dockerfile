@@ -64,14 +64,16 @@ RUN composer config -g repo.packagist composer https://mirrors.aliyun.com/compos
 # 创建WebApp目录
 RUN mkdir -p /data/www/
 RUN chown -R tengine:tengine /data/www/
+
+
 COPY ./order_api/ /data/www/
 
 # 设置默认工作目录
 WORKDIR /data/www/
 
 # composer安装拓展
-RUN mkdir -p /data/www/vendor/
-RUN composer install
+
+# RUN composer install
 
 # 暴露端口
 EXPOSE 80 443 9092 9501
