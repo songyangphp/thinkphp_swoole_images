@@ -22,9 +22,9 @@
 <script>
     var socket = io('http://127.0.0.1:9503',{transports: ['websocket']});
     //xxx.com 这个自己替换成自己的环境thinkphp-swoole 的端口或者是nginx的代理端口
-    socket.on('testcallback',(data)=>{
+    socket.on('testcallback',(data)=>{ //监听后端的testcallback事件
         console.log('data',data);//你好浏览器
-        $("#content").append("<p><span style='color: red'>["+data.fd+"]：</span>"+data.massage+"</p>")
+        $("#content").append("<p><span style='color: blue'>"+data.date+"</span><span style='color: red'>["+data.fd+"]：</span>"+data.massage+"</p>")
     });
     function send()
     {
