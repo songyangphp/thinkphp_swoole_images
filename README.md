@@ -1,15 +1,16 @@
 ## 介绍
 * 基于thinkphp6+swoole的镜像源码
-* 系统：centOS-7
+* 系统：Linux centOS-7 容器：docker
 * php版本：php7.3.33
 * 支持composer拓展
 * 支持redis拓展
 * 支持swoole拓展
 * 支持swoole全部特性 异步任务投递处理已封装 为解决耗时程序处理问题 开箱即用
 * 使用nginx作为web服务
-* 可选kafka服务
+* 可选kafka服务，mqtt服务
 * 即可选择swoole作为服务，也可选择传统web配置
-* 纯粹的thinkphp6框架 无任何集成
+* 纯粹的thinkphp6框架 默认单应用模式 强制路由
+* demo中包含了协程用例，异步任务投递用例，websocket用例
 
 
 ## 使用方式及注意事项(保姆级教程)
@@ -22,7 +23,6 @@
 * 配置.env环境变量
 * 开放9501端口 容器端口80指向宿主机85端口 开放443端口(https) 在docker-compose.yml文件中配置
 * 本地调试时 mysql的地址为宿主机局域网ip .env中配置
-* controller/index.php有异步任务投递测试用例 及任务分发配置流程 如不需要可自行删除
 * 准备工作完毕 开始构建镜像
 * 根目录下 执行命令docker-compose build
 * 等待镜像构建完成后 执行名称docker-compose up启动容器

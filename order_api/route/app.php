@@ -9,9 +9,7 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\facade\Route;
-
-Route::get('think', function () {
-    return 'hello,ThinkPHP6!';
-});
-
-Route::get('hello/:name', 'index/hello');
+Route::get('/', 'Index/index');
+Route::get('/asynctask/demo', 'AsyncTask/demo');
+Route::get('/coroutine/demo', 'Coroutine/demo');
+Route::get('/websocket/demo', 'Websocket/index');

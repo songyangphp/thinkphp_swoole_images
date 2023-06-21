@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.socket.io/socket.io-1.4.4.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+
+<div>
+    <div>
+        返回内容:
+    </div>
+    <div style="width: 600px;height: auto; border: #999999 1px solid" id="content">
+        
+    </div>
+    <input type="text" id="msg" style="margin-top: 10px">
+    <button onclick="send()">发送</button>
+</div>
+
+<script>
+    var socket = io('http://127.0.0.1:9503',{transports: ['websocket']});
+    //xxx.com 这个自己替换成自己的环境thinkphp-swoole 的端口或者是nginx的代理端口
+    socket.on('testcallback',(data)=>{
+        console.log('data',data);//你好浏览器
+        $("#content").append("<p><span style='color: red'>["+data.fd+"]：</span>"+data.massage+"</p>")
+    });
+    function send()
+    {
+        var msg = $("#msg").val();
+        socket.emit('test',{"massage":msg});
+        $("#msg").val("")
+    }
+</script>
+</body>
+</html>
