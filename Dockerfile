@@ -67,6 +67,10 @@ RUN chown -R tengine:tengine /data/www/
 
 
 COPY ./order_api/ /data/www/
+# 复制环境变量
+COPY ./conf/env/.env /data/www/.env
+# 复制php.ini
+COPY ./conf/php.ini /etc/opt/remi/php73/
 
 # 设置默认工作目录
 WORKDIR /data/www/
