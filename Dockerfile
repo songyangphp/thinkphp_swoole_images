@@ -66,7 +66,7 @@ RUN mkdir -p /data/www/
 RUN chown -R tengine:tengine /data/www/
 
 
-COPY ./order_api/ /data/www/
+COPY ./think_swoole/ /data/www/
 # 复制环境变量
 COPY ./conf/env/.env /data/www/.env
 # 复制php.ini

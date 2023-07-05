@@ -1,12 +1,10 @@
 version: '2'
 services:
-    order_api:
-        # image: eborges/phpnginx7.2
+    think_swoole:
         build: .
-        # image: vango/easyswoole
-        container_name: order_api
+        container_name: think_swoole
         volumes:
-            - ./order_api/:/data/www/
+            - ./think_swoole/:/data/www/
             - ./conf/conf.d/:/usr/local/tengine/conf/conf.d/
             - ./conf/nginx.conf:/usr/local/tengine/conf/nginx.conf
         ports:
