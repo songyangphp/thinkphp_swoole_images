@@ -15,7 +15,7 @@
 
 ## 使用方式及注意事项(保姆级教程)
 * 安装docker windows系统直接安装docker desktop会自动集成docker和docker-compose
-* 构建镜像 镜像中包含了系统镜像，镜像地址在阿里云ACR镜像管理平台管理维护 镜像地址：registry.cn-beijing.aliyuncs.com/order_sae/order_device_pay_api:v1.0
+* 构建镜像 镜像中包含了系统镜像，镜像地址在阿里云ACR镜像管理平台管理维护 镜像地址：registry.cn-beijing.aliyuncs.com/linux_php73/songyang_linux_php73:v1.0
 * 配置nginx反向代理swoole监听使用（conf/conf.d/api.pay.device.songyang.com.conf和dev.api.pay.device.songyang.com.conf）
 * 配置nginx域名指向（conf/conf.d/test.device.songyang.com.com.conf）
 * 以上配置的域名可根据自己的业务进行修改
