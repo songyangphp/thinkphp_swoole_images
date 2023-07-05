@@ -1,4 +1,4 @@
-FROM registry.cn-beijing.aliyuncs.com/order_sae/order_device_pay_api:v1.0
+FROM registry.cn-beijing.aliyuncs.com/linux_php73/songyang_linux_php73:v1.0
 
 
 RUN yum -y update && yum -y install vim tree htop tmux net-tools telnet wget curl supervistor autoconf git gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel php73-php-process php73-php-gmp
