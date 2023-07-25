@@ -67,8 +67,8 @@ RUN chown -R tengine:tengine /data/www/
 
 
 COPY ./think_swoole/ /data/www/
-# 复制环境变量
-COPY ./conf/env/.env /data/www/.env
+# 复制环境变量 按照环境切换不同的环境变量
+COPY ./conf/env/.env.dev /data/www/.env
 # 复制php.ini
 COPY ./conf/php.ini /etc/opt/remi/php73/
 
@@ -84,7 +84,7 @@ EXPOSE 80 443 9092 9501
 
 # 清理压缩包与解压文件
 RUN rm -rf /usr/local/src/tengine*
-RUN rm -rf /data/www/.env
+# RUN rm -rf /data/www/.env
 RUN rm -rf /etc/opt/remi/php73/php.d/15-xdebug.ini
 RUN rm -rf /etc/opt/remi/php73/php.d/40-apcu.ini
 RUN rm -rf /etc/opt/remi/php73/php.d/50-apc.ini

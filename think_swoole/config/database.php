@@ -24,7 +24,7 @@ return [
             // 数据库类型
             'type'            => env('database.type', 'mysql'),
             // 服务器地址
-            'hostname'        => env('database.hostname', '192.168.1.23'),
+            'hostname'        => env('database.hostname', 'host.docker.internal'),
             // 数据库名
             'database'        => env('database.database', 'epii_admin'),
             // 用户名
