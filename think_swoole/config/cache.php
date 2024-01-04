@@ -25,5 +25,25 @@ return [
             'serialize'  => [],
         ],
         // 更多的缓存连接
+        'redis' => [
+            // 驱动方式
+//            'type'       => 'redis',
+//            // 服务器地址
+//            'host'       => env('redis.host', 'r-2zey9h0uvci82hmn9bpd.redis.rds.aliyuncs.com'),
+//            // 密码
+//            'password'   => env('redis.auth', 'CLOUD7092qaz@!#'),
+//            // 数据库
+//            'select'     => env('redis.select', 103),
+
+
+            // 驱动方式
+            'type'       => 'redis',
+            // 服务器地址
+            'host'       => env('redis.host', '192.168.1.23'),
+            // 密码
+            'password'   => env('redis.auth', ''),
+            // 数据库
+            'select'     => env('redis.select', 1),
+        ],
     ],
 ];
