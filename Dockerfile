@@ -1,7 +1,14 @@
 FROM registry.cn-beijing.aliyuncs.com/linux_php73/songyang_linux_php73:v1.0
 
+# 移除原有的yum源
+RUN rm -f /etc/yum.repos.d/*.repo
 
-RUN yum -y update && yum -y install vim tree htop tmux net-tools telnet wget curl supervistor autoconf git gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel php73-php-process php73-php-gmp
+# 添加阿里云的yum源文件
+# RUN curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+
+
+RUN yum -y update && yum -y install vim tree htop tmux net-tools telnet wget curl supervisor autoconf git gcc gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel php73-php-process php73-php-gmp
 RUN yum install crontabs -y
 # 创建用户
 RUN groupadd tengine
