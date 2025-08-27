@@ -41,7 +41,8 @@
 
 ## 目前存在的问题
 * 构建镜像时，DOCKERFILE中不可执行composer install命令，这样就导致了无法忽略vendor目录
-
+* 由于centos更新，旧的yum源可能无法拉取，已更换为阿里源镜像，centos7版本
+* 如果容器运行不成功，可能是start.sh的换行符问题，由CRLF改成LF即可
 ***
 
 #### by：火车王 songyangphp@github.com
