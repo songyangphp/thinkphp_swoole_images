@@ -12,7 +12,12 @@ use PhpAmqpLib\Message\AMQPMessage;
  */
 class Rabbitmq extends BaseController
 {
-    public function send()
+    /**
+     * 模拟生产者
+     * @return void
+     * @throws \Exception
+     */
+    public function producer()
     {
 
         // 创建连接到 RabbitMQ 服务器
@@ -23,13 +28,13 @@ class Rabbitmq extends BaseController
         $channel->queue_declare('task_queue', false, true, false, false);
 
         // 发送的消息内容
-        $data = "Hello World!";
+        $data = "啦啦啦";
         $msg = new AMQPMessage($data, array('delivery_mode' => 2)); // 设置消息为持久化
 
         // 发布消息到队列
         $channel->basic_publish($msg, '', 'task_queue');
 
-        echo " [x] Sent 'Hello World!'\n";
+        echo " [x] Sent '$data'\n";
 
         // 关闭连接
 
