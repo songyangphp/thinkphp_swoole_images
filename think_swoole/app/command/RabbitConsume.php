@@ -24,6 +24,7 @@ class RabbitConsume extends Command
     protected function execute(Input $input, Output $output)
     {
 
+
         // 创建连接到 RabbitMQ 服务器
         $connection = new AMQPStreamConnection('host.docker.internal', 5672, 'admin', 'admin321');
         $channel = $connection->channel();
