@@ -14,3 +14,4 @@ Route::get('/asynctask/demo', 'AsyncTask/demo');
 Route::get('/coroutine/demo', 'Coroutine/demo');
 Route::get('/websocket/demo', 'Websocket/index');
 Route::get('/redis/test', 'RedisTest/index');
+Route::get('/rabbitmq/send', 'Rabbitmq/send');
